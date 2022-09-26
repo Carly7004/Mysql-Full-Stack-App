@@ -1,0 +1,69 @@
+.App {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 100px;
+}
+
+.products {
+    display: flex;
+    gap: 10px;
+}
+
+.product {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+}
+
+img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    background-color: aquamarine;
+}
+
+.delete {
+    border: none;
+    padding: 3px 6px;
+    background-color: white;
+    color: lightcoral;
+    cursor: pointer;
+    border: 1px solid rgb(245, 191, 191);
+}
+
+.update {
+    border: none;
+    padding: 3px 6px;
+    background-color: white;
+    color: lightseagreen;
+    cursor: pointer;
+    border: 1px solid rgb(205, 204, 245);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    width: 245px;
+    border: none;
+    border: 1px solid rgb(245, 191, 191);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.formButton {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    /* border: 1px solid rgb(245, 191, 191); */
+    font-weight: bold;
+}

@@ -1,0 +1,14 @@
+POST http://localhost:8800/products 
+Content-Type: application/json
+
+{
+    "title": "watch",
+    "desc": "another product desc for testing",
+    "image": "image.png"
+}
+
+
+###
+
+GET http://localhost:8800/products 
+Content-Type: application/json;
