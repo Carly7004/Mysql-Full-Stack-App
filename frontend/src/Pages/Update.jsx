@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const Update = () => {
@@ -10,11 +10,14 @@ const Update = () => {
     image: "",
   });
 
-  const navigate = useNavigate();
-  const location = useLocation();
-  const productId = location.pathname.split("/")[2];
+  const [error, setError] = useState(false);
 
-  console.log(location.pathname.split("/")[2]);
+  const navigate = useNavigate();
+  // const location = useLocation();
+
+  const { id } = useParams();
+  console.log(id);
+  // const productId = location.pathname.split("/")[2];
 
   const handleChange = (e) => {
     setProduct((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -23,10 +26,11 @@ const Update = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8800/products/${productId}`, product);
+      await axios.put(`http://localhost:8800/products/${id}`, product);
       navigate("/");
     } catch (error) {
       console.log(error);
+      setError(true);
     }
   };
 
@@ -60,6 +64,8 @@ const Update = () => {
       <button className="formButton" onClick={handleSubmit}>
         Update
       </button>
+      {error && "Something went wrong!"}
+      <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>See all books</Link>
     </div>
   );
 };

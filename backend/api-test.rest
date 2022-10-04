@@ -12,3 +12,9 @@ Content-Type: application/json
 
 GET http://localhost:8800/products 
 Content-Type: application/json;
+
+
+###
+
+DELETE http://localhost:8800/products/1
+Content-Type: application/json;
